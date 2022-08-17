@@ -1,0 +1,22 @@
+---
+
+name: 'Build artifacts'
+description: 'Build html pages'
+
+inputs:
+  host:
+    description: 'Host'
+    required: false
+    default: go.nhat.io
+
+outputs: {}
+
+runs:
+  using: "composite"
+  steps:
+    - name: "Build"
+      shell: bash
+      env:
+        HOST: ${{ inputs.host }}
+      run: >
+        ${{ github.action_path }}/build.sh
