@@ -41,7 +41,7 @@ EOF
 
 	git -C "$gitDir" clone "$repositoryURL" .
 
-	subModules=($(find "$gitDir" -type f -name 'go.mod' | sed -E "s#$gitDir/##g" | sed -E 's#/go.mod##g' | grep -v go.mod))
+	subModules=($(find "$gitDir" -type f -name 'go.mod' | sed -E "s#$gitDir/##g" | sed -E 's#/go.mod##g' | grep -v go.mod || true))
 
 	if [[ ${#subModules[@]} -eq 0 ]]; then
 		continue
