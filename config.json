@@ -1,6 +1,10 @@
 {
   "repositories": [
     {
+      "path": "clock",
+      "repository": "https://github.com/nhatthm/go-clock"
+    },
+    {
       "path": "testcontainers-extra",
       "repository": "https://github.com/nhatthm/testcontainers-go-extra"
     },
