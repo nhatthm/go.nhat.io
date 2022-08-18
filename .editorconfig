@@ -17,3 +17,6 @@ indent_style = space
 
 [.github/*/*.yaml]
 indent_size = 2
+
+[config.json]
+indent_size = 2

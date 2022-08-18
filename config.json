@@ -1,0 +1,23 @@
+{
+  "repositories": [
+    {
+      "path": "testcontainers-extra",
+      "repository": "https://github.com/nhatthm/testcontainers-go-extra"
+    },
+    {
+      "path": "testcontainers-registry",
+      "repository": "https://github.com/nhatthm/testcontainers-go-registry"
+    },
+    {
+      "path": "testcontainers-go-extra",
+      "repository": "https://github.com/nhatthm/testcontainers-go-extra",
+      "deprecated": "Use testcontainers-extra instead"
+    },
+    {
+      "path": "testcontainers-go-registry",
+      "repository": "https://github.com/nhatthm/testcontainers-go-registry",
+      "ref": "v0.6.0",
+      "deprecated": "Use testcontainers-registry instead"
+    }
+  ]
+}

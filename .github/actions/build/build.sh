@@ -22,15 +22,14 @@ git config --global advice.detachedHead false
 echo -e "${OK_COLOR}Build repositories${NO_COLOR}"
 echo
 
-for repository in repositories/*.json; do
-	echo -e "${WARN_COLOR}Read${NO_COLOR}: $repository"
-
-	path=$(jq -r .path <"$repository")
-	repositoryURL=$(jq -r .repository <"$repository")
-	gitRef=$(jq -r '.ref // "master"' <"$repository")
+while read -r config; do
+	path=$(echo "$config" | jq -r .path)
+	repositoryURL=$(echo "$config" | jq -r .repository)
+	gitRef=$(echo "$config" | jq -r '.ref // "master"')
 	buildDir="build/$path"
 	gitDir="$tmpDir/$path"
 
+	echo -e "${WARN_COLOR}Build${NO_COLOR}: $path"
 	echo -e "${WARN_COLOR}Create${NO_COLOR}: ${buildDir}"
 	echo -e "${WARN_COLOR}Create${NO_COLOR}: ${gitDir}"
 
@@ -92,18 +91,29 @@ EOF
 	done
 
 	echo
-done
+done < <(jq -c -M -r ".repositories[] " <config.json)
 
 echo -e "${OK_COLOR}Build index.html${NO_COLOR}"
 
-indexURLs=$(cat repositories/*.json | jq -r --arg host "$HOST" -s '.[] | "<li><a href=\"https://pkg.go.dev/\($host)/\(.path)\">\($host)/\(.path)</a></li>"' 2>/dev/null)
+indexURLs=$(
+    jq -r --arg host "$HOST" '
+        .repositories[] |
+        "            <li>
+                <a href=\"https://pkg.go.dev/\($host)/\(.path)\">\($host)/\(.path)</a>
+                \(if .deprecated == null then "" else "<i>" + .deprecated + "</i>" end)
+            </li>
+"' <config.json 2>/dev/null)
 
 echo -e "${WARN_COLOR}Write${NO_COLOR}: index.html"
 
 cat <<EOF >build/index.html
 <!DOCTYPE html>
 <html>
-<h1>$HOST</h1>
-<ul>$indexURLs</ul>
+    <body>
+        <h1>$HOST</h1>
+        <ul>
+$indexURLs
+        </ul>
+    </body>
 </html>
 EOF
