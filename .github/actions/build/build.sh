@@ -100,7 +100,7 @@ indexURLs=$(
         .repositories[] |
         "            <li>
                 <a href=\"https://pkg.go.dev/\($host)/\(.path)\">\($host)/\(.path)</a>
-                \(if .deprecated == null then "" else "<i>" + .deprecated + "</i>" end)
+                \(if .deprecated == null then "" else "<i>(" + .deprecated + ")</i>" end)
             </li>
 "' <config.json 2>/dev/null)
 
