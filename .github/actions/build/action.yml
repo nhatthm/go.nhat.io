@@ -1,6 +1,6 @@
 ---
 
-name: 'Build artifacts'
+name: 'Build html pages'
 description: 'Build html pages'
 
 inputs:
