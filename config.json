@@ -1,31 +1,40 @@
 {
+  "page_title": "Open Source Go Modules",
+  "host": "go.nhat.io",
   "repositories": [
     {
+      "library": "Clock",
       "path": "clock",
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
+      "library": "Testcontainers Extra",
       "path": "testcontainers-extra",
       "repository": "https://github.com/nhatthm/testcontainers-go-extra"
     },
     {
+      "library": "Testcontainers Registry",
       "path": "testcontainers-registry",
       "repository": "https://github.com/nhatthm/testcontainers-go-registry"
     },
     {
-      "path": "testcontainers-go-extra",
-      "repository": "https://github.com/nhatthm/testcontainers-go-extra",
-      "deprecated": "Use testcontainers-extra instead"
-    },
-    {
+      "library": "Vanity Render",
       "path": "vanityrender",
       "repository": "https://github.com/nhatthm/govanityrender"
     },
     {
+      "library": "Testcontainers Go Extra",
+      "path": "testcontainers-go-extra",
+      "repository": "https://github.com/nhatthm/testcontainers-go-extra",
+      "ref": "v0.4.0",
+      "deprecated": "Use go.nhat.io/testcontainers-extra instead"
+    },
+    {
+      "library": "Testcontainers Go Registry",
       "path": "testcontainers-go-registry",
       "repository": "https://github.com/nhatthm/testcontainers-go-registry",
       "ref": "v0.6.0",
-      "deprecated": "Use testcontainers-registry instead"
+      "deprecated": "Use go.nhat.io/testcontainers-registry instead"
     }
   ]
 }
