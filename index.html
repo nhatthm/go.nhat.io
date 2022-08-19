@@ -1,40 +1,74 @@
-{
-  "page_title": "Open Source Go Modules",
-  "host": "go.nhat.io",
-  "repositories": [
-    {
-      "library": "Clock",
-      "path": "clock",
-      "repository": "https://github.com/nhatthm/go-clock"
-    },
-    {
-      "library": "Testcontainers Extra",
-      "path": "testcontainers-extra",
-      "repository": "https://github.com/nhatthm/testcontainers-go-extra"
-    },
-    {
-      "library": "Testcontainers Registry",
-      "path": "testcontainers-registry",
-      "repository": "https://github.com/nhatthm/testcontainers-go-registry"
-    },
-    {
-      "library": "Vanity Render",
-      "path": "vanityrender",
-      "repository": "https://github.com/nhatthm/govanityrender"
-    },
-    {
-      "library": "Testcontainers Go Extra",
-      "path": "testcontainers-go-extra",
-      "repository": "https://github.com/nhatthm/testcontainers-go-extra",
-      "ref": "v0.4.0",
-      "deprecated": "Use go.nhat.io/testcontainers-extra instead"
-    },
-    {
-      "library": "Testcontainers Go Registry",
-      "path": "testcontainers-go-registry",
-      "repository": "https://github.com/nhatthm/testcontainers-go-registry",
-      "ref": "v0.6.0",
-      "deprecated": "Use go.nhat.io/testcontainers-registry instead"
-    }
-  ]
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Open Source Go Modules</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <section class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Library</th>
+                    <th>Source Repository</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://pkg.go.dev/go.nhat.io/clock">Clock</a>
+                    </td>
+                    <td><a href="https://github.com/nhatthm/go-clock">github.com/nhatthm/go-clock</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://pkg.go.dev/go.nhat.io/testcontainers-extra">Testcontainers Extra</a>
+                    </td>
+                    <td><a href="https://github.com/nhatthm/testcontainers-go-extra">github.com/nhatthm/testcontainers-go-extra</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://pkg.go.dev/go.nhat.io/testcontainers-registry">Testcontainers Registry</a>
+                    </td>
+                    <td><a href="https://github.com/nhatthm/testcontainers-go-registry">github.com/nhatthm/testcontainers-go-registry</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://pkg.go.dev/go.nhat.io/vanityrender">Vanity Render</a>
+                    </td>
+                    <td><a href="https://github.com/nhatthm/govanityrender">github.com/nhatthm/govanityrender</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://pkg.go.dev/go.nhat.io/testcontainers-go-extra">Testcontainers Go Extra</a>
+                        <small><i>(Deprecated)</i></small>
+                        <i class="deprecated fa-solid fa-triangle-exclamation" style="color: #f44336" data-tooltip="Use go.nhat.io/testcontainers-extra instead"></i>
+                    </td>
+                    <td><a href="https://github.com/nhatthm/testcontainers-go-extra">github.com/nhatthm/testcontainers-go-extra</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://pkg.go.dev/go.nhat.io/testcontainers-go-registry">Testcontainers Go Registry</a>
+                        <small><i>(Deprecated)</i></small>
+                        <i class="deprecated fa-solid fa-triangle-exclamation" style="color: #f44336" data-tooltip="Use go.nhat.io/testcontainers-registry instead"></i>
+                    </td>
+                    <td><a href="https://github.com/nhatthm/testcontainers-go-registry">github.com/nhatthm/testcontainers-go-registry</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+        tippy('.deprecated', {
+            content(reference) {
+                return reference.getAttribute('data-tooltip');
+            }
+        });
+    </script>
+</body>
+</html>
