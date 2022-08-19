@@ -8,6 +8,21 @@
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
+      "library": "gRPC Mock",
+      "path": "grpcmock",
+      "repository": "https://github.com/nhatthm/grpcmock"
+    },
+    {
+      "library": "HTTP Mock",
+      "path": "httpmock",
+      "repository": "https://github.com/nhatthm/httpmock"
+    },
+    {
+      "library": "Matcher",
+      "path": "matcher",
+      "repository": "https://github.com/nhatthm/go-matcher"
+    },
+    {
       "library": "Testcontainers Extra",
       "path": "testcontainers-extra",
       "repository": "https://github.com/nhatthm/testcontainers-go-extra"
@@ -16,6 +31,11 @@
       "library": "Testcontainers Registry",
       "path": "testcontainers-registry",
       "repository": "https://github.com/nhatthm/testcontainers-go-registry"
+    },
+    {
+      "library": "Time Parser",
+      "path": "timeparser",
+      "repository": "https://github.com/nhatthm/timeparser"
     },
     {
       "library": "Vanity Render",
