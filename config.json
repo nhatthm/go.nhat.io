@@ -18,6 +18,10 @@
       "deprecated": "Use testcontainers-extra instead"
     },
     {
+      "path": "vanityrender",
+      "repository": "https://github.com/nhatthm/govanityrender"
+    },
+    {
       "path": "testcontainers-go-registry",
       "repository": "https://github.com/nhatthm/testcontainers-go-registry",
       "ref": "v0.6.0",
