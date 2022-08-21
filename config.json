@@ -19,7 +19,7 @@
     },
     {
       "library": "Matcher",
-      "path": "matcher",
+      "path": "matcher/v2",
       "repository": "https://github.com/nhatthm/go-matcher"
     },
     {
