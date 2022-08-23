@@ -1,5 +1,5 @@
 {
-  "checksum": "4a62618858ce74b9c40188611fae42daa59e9982",
+  "checksum": "f1ffed4365eae03342a25bcbc8d8943782b141cc",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -22,26 +22,6 @@
           "home_url": "https://github.com/nhatthm/go-clock",
           "directory_url": "https://github.com/nhatthm/go-clock/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-clock/blob/master{/dir}/{file}#L{line}"
-        }
-      ]
-    },
-    {
-      "name": "Matcher",
-      "path": "matcher",
-      "deprecated": "",
-      "repository_url": "https://github.com/nhatthm/go-matcher",
-      "repository_name": "github.com/nhatthm/go-matcher",
-      "ref": "",
-      "latest_version": "v1.3.1",
-      "modules": [
-        {
-          "path": "matcher",
-          "import_prefix": "matcher",
-          "vcs": "git",
-          "repository_url": "https://github.com/nhatthm/go-matcher",
-          "home_url": "https://github.com/nhatthm/go-matcher",
-          "directory_url": "https://github.com/nhatthm/go-matcher/tree/master{/dir}",
-          "file_url": "https://github.com/nhatthm/go-matcher/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
