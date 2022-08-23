@@ -9,11 +9,6 @@
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
-      "name": "Matcher",
-      "path": "matcher",
-      "repository": "https://github.com/nhatthm/go-matcher"
-    },
-    {
       "name": "Testcontainers Extra",
       "path": "testcontainers-extra",
       "repository": "https://github.com/nhatthm/testcontainers-go-extra"
