@@ -9,16 +9,6 @@
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
-      "name": "gRPC Mock",
-      "path": "grpcmock",
-      "repository": "https://github.com/nhatthm/grpcmock"
-    },
-    {
-      "name": "HTTP Mock",
-      "path": "httpmock",
-      "repository": "https://github.com/nhatthm/httpmock"
-    },
-    {
       "name": "Matcher",
       "path": "matcher",
       "repository": "https://github.com/nhatthm/go-matcher"
