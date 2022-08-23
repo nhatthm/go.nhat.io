@@ -1,6 +1,7 @@
 {
   "page_title": "Open Source Go Modules",
   "host": "go.nhat.io",
+  "source_url": "https://github.com/nhatthm/go.nhat.io",
   "repositories": [
     {
       "name": "Clock",
