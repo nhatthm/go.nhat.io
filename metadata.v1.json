@@ -3,6 +3,7 @@
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
+  "source_url": "https://github.com/nhatthm/go.nhat.io",
   "repositories": [
     {
       "name": "Clock",
@@ -196,7 +197,7 @@
       "repository_url": "https://github.com/nhatthm/govanityrender",
       "repository_name": "github.com/nhatthm/govanityrender",
       "ref": "",
-      "latest_version": "v0.4.1",
+      "latest_version": "v0.5.0",
       "modules": [
         {
           "path": "vanityrender",
