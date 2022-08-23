@@ -29,7 +29,7 @@
       "repository": "https://github.com/nhatthm/timeparser"
     },
     {
-      "name": "Vanity Render",
+      "name": "Vanity HTML Renderer",
       "path": "vanityrender",
       "repository": "https://github.com/nhatthm/govanityrender"
     },
