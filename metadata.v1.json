@@ -1,5 +1,5 @@
 {
-  "checksum": "1a6016251fe724798c924548f0343e402f5d81f5",
+  "checksum": "4a62618858ce74b9c40188611fae42daa59e9982",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -22,46 +22,6 @@
           "home_url": "https://github.com/nhatthm/go-clock",
           "directory_url": "https://github.com/nhatthm/go-clock/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-clock/blob/master{/dir}/{file}#L{line}"
-        }
-      ]
-    },
-    {
-      "name": "gRPC Mock",
-      "path": "grpcmock",
-      "deprecated": "",
-      "repository_url": "https://github.com/nhatthm/grpcmock",
-      "repository_name": "github.com/nhatthm/grpcmock",
-      "ref": "",
-      "latest_version": "v0.18.0",
-      "modules": [
-        {
-          "path": "grpcmock",
-          "import_prefix": "grpcmock",
-          "vcs": "git",
-          "repository_url": "https://github.com/nhatthm/grpcmock",
-          "home_url": "https://github.com/nhatthm/grpcmock",
-          "directory_url": "https://github.com/nhatthm/grpcmock/tree/master{/dir}",
-          "file_url": "https://github.com/nhatthm/grpcmock/blob/master{/dir}/{file}#L{line}"
-        }
-      ]
-    },
-    {
-      "name": "HTTP Mock",
-      "path": "httpmock",
-      "deprecated": "",
-      "repository_url": "https://github.com/nhatthm/httpmock",
-      "repository_name": "github.com/nhatthm/httpmock",
-      "ref": "",
-      "latest_version": "v0.7.0",
-      "modules": [
-        {
-          "path": "httpmock",
-          "import_prefix": "httpmock",
-          "vcs": "git",
-          "repository_url": "https://github.com/nhatthm/httpmock",
-          "home_url": "https://github.com/nhatthm/httpmock",
-          "directory_url": "https://github.com/nhatthm/httpmock/tree/master{/dir}",
-          "file_url": "https://github.com/nhatthm/httpmock/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
@@ -191,7 +151,7 @@
       ]
     },
     {
-      "name": "Vanity Render",
+      "name": "Vanity HTML Renderer",
       "path": "vanityrender",
       "deprecated": "",
       "repository_url": "https://github.com/nhatthm/govanityrender",
