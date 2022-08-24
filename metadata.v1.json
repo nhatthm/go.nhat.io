@@ -12,7 +12,7 @@
       "repository_url": "https://github.com/nhatthm/aferomock",
       "repository_name": "github.com/nhatthm/aferomock",
       "ref": "",
-      "latest_version": "v0.3.1",
+      "latest_version": "v0.4.0",
       "modules": [
         {
           "path": "aferomock",
