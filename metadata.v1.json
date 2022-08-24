@@ -27,15 +27,24 @@
     },
     {
       "name": "Afero Copy",
-      "path": "aferocopy",
+      "path": "aferocopy/v2",
       "deprecated": "",
       "repository_url": "https://github.com/nhatthm/aferocopy",
       "repository_name": "github.com/nhatthm/aferocopy",
       "ref": "",
-      "latest_version": "v1.2.0",
+      "latest_version": "v2.0.0",
       "modules": [
         {
           "path": "aferocopy",
+          "import_prefix": "aferocopy",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/aferocopy",
+          "home_url": "https://github.com/nhatthm/aferocopy",
+          "directory_url": "https://github.com/nhatthm/aferocopy/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/aferocopy/blob/master{/dir}/{file}#L{line}"
+        },
+        {
+          "path": "aferocopy/v2",
           "import_prefix": "aferocopy",
           "vcs": "git",
           "repository_url": "https://github.com/nhatthm/aferocopy",
