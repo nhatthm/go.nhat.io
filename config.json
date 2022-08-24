@@ -4,6 +4,16 @@
   "source_url": "https://github.com/nhatthm/go.nhat.io",
   "repositories": [
     {
+      "name": "Afero Assert",
+      "path": "aferoassert",
+      "repository": "https://github.com/nhatthm/aferoassert"
+    },
+    {
+      "name": "Afero Copy",
+      "path": "aferocopy",
+      "repository": "https://github.com/nhatthm/aferocopy"
+    },
+    {
       "name": "Afero Mock",
       "path": "aferomock",
       "repository": "https://github.com/nhatthm/aferomock"
