@@ -4,6 +4,8 @@ name: "build"
 concurrency: build
 
 on:
+  schedule:
+    - cron: "0 * * * *"
   push:
     branches:
       - master
