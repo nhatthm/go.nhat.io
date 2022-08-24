@@ -4,6 +4,11 @@
   "source_url": "https://github.com/nhatthm/go.nhat.io",
   "repositories": [
     {
+      "name": "Afero Mock",
+      "path": "aferomock",
+      "repository": "https://github.com/nhatthm/aferomock"
+    },
+    {
       "name": "Clock",
       "path": "clock",
       "repository": "https://github.com/nhatthm/go-clock"
