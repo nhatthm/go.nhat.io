@@ -1,10 +1,50 @@
 {
-  "checksum": "f2bff9e670dd5c9b9e4a273f34c6e87de89013c4",
+  "checksum": "0886dfde82915fdd945e72546dab89c6d44c93dc",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
   "source_url": "https://github.com/nhatthm/go.nhat.io",
   "repositories": [
+    {
+      "name": "Afero Assert",
+      "path": "aferoassert",
+      "deprecated": "",
+      "repository_url": "https://github.com/nhatthm/aferoassert",
+      "repository_name": "github.com/nhatthm/aferoassert",
+      "ref": "",
+      "latest_version": "v0.1.6",
+      "modules": [
+        {
+          "path": "aferoassert",
+          "import_prefix": "aferoassert",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/aferoassert",
+          "home_url": "https://github.com/nhatthm/aferoassert",
+          "directory_url": "https://github.com/nhatthm/aferoassert/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/aferoassert/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Afero Copy",
+      "path": "aferocopy",
+      "deprecated": "",
+      "repository_url": "https://github.com/nhatthm/aferocopy",
+      "repository_name": "github.com/nhatthm/aferocopy",
+      "ref": "",
+      "latest_version": "v1.2.0",
+      "modules": [
+        {
+          "path": "aferocopy",
+          "import_prefix": "aferocopy",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/aferocopy",
+          "home_url": "https://github.com/nhatthm/aferocopy",
+          "directory_url": "https://github.com/nhatthm/aferocopy/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/aferocopy/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
     {
       "name": "Afero Mock",
       "path": "aferomock",
