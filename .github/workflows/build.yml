@@ -10,6 +10,10 @@ on:
     branches:
       - master
   workflow_dispatch:
+    inputs:
+      modules:
+        description: 'A comma-separated list of modules to be rebuilt. If omitted, rebuild everything'
+        required: false
 
 permissions:
   contents: write
@@ -23,10 +27,8 @@ jobs:
 
       - name: Build
         uses: nhatthm/govanityrender-action@v0.2.0
-
-      - name: Check
-        run: |
-          tree -L 5 build/
+        with:
+          modules: ${{ github.event.inputs.modules }}
 
       - name: Push
         uses: JamesIves/github-pages-deploy-action@v4
