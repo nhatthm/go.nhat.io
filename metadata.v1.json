@@ -1,5 +1,5 @@
 {
-  "checksum": "0886dfde82915fdd945e72546dab89c6d44c93dc",
+  "checksum": "447c58e2f7331b82fc8ab71fd954097084969522",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -95,6 +95,26 @@
       ]
     },
     {
+      "name": "gRPC Go Middlewares",
+      "path": "grpc-middleware",
+      "deprecated": "",
+      "repository_url": "https://github.com/nhatthm/go-grpc-middleware",
+      "repository_name": "github.com/nhatthm/go-grpc-middleware",
+      "ref": "",
+      "latest_version": "v0.3.0",
+      "modules": [
+        {
+          "path": "grpc-middleware",
+          "import_prefix": "grpc-middleware",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-grpc-middleware",
+          "home_url": "https://github.com/nhatthm/go-grpc-middleware",
+          "directory_url": "https://github.com/nhatthm/go-grpc-middleware/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-grpc-middleware/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
       "name": "Matcher",
       "path": "matcher/v2",
       "deprecated": "",
@@ -120,6 +140,26 @@
           "home_url": "https://github.com/nhatthm/go-matcher",
           "directory_url": "https://github.com/nhatthm/go-matcher/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-matcher/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Expects for AlecAivazis/survey",
+      "path": "surveyexpect",
+      "deprecated": "",
+      "repository_url": "https://github.com/nhatthm/surveyexpect",
+      "repository_name": "github.com/nhatthm/surveyexpect",
+      "ref": "",
+      "latest_version": "v0.7.0",
+      "modules": [
+        {
+          "path": "surveyexpect",
+          "import_prefix": "surveyexpect",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/surveyexpect",
+          "home_url": "https://github.com/nhatthm/surveyexpect",
+          "directory_url": "https://github.com/nhatthm/surveyexpect/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/surveyexpect/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
