@@ -24,9 +24,19 @@
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
+      "name": "gRPC Go Middlewares",
+      "path": "grpc-middleware",
+      "repository": "https://github.com/nhatthm/go-grpc-middleware"
+    },
+    {
       "name": "Matcher",
       "path": "matcher",
       "repository": "https://github.com/nhatthm/go-matcher"
+    },
+    {
+      "name": "Expects for AlecAivazis/survey",
+      "path": "surveyexpect",
+      "repository": "https://github.com/nhatthm/surveyexpect"
     },
     {
       "name": "Testcontainers Extra",
