@@ -26,7 +26,8 @@
     {
       "name": "gRPC Go Middlewares",
       "path": "grpc-middleware",
-      "repository": "https://github.com/nhatthm/go-grpc-middleware"
+      "repository": "https://github.com/nhatthm/go-grpc-middleware",
+      "hidden": true
     },
     {
       "name": "Matcher",
@@ -36,7 +37,8 @@
     {
       "name": "Expects for AlecAivazis/survey",
       "path": "surveyexpect",
-      "repository": "https://github.com/nhatthm/surveyexpect"
+      "repository": "https://github.com/nhatthm/surveyexpect",
+      "hidden": true
     },
     {
       "name": "Testcontainers Extra",
