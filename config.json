@@ -55,8 +55,7 @@
     {
       "name": "Expects for AlecAivazis/survey",
       "path": "surveyexpect",
-      "repository": "https://github.com/nhatthm/surveyexpect",
-      "hidden": true
+      "repository": "https://github.com/nhatthm/surveyexpect"
     },
     {
       "name": "Testcontainers Extra",
