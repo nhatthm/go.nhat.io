@@ -1,5 +1,5 @@
 {
-  "checksum": "d0b7d9fdba8245fc44e02ed350c2f13f1bbf700d",
+  "checksum": "20b9921c69453c9947cdbab86668934232ee6ab8",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -99,7 +99,7 @@
       ]
     },
     {
-      "name": "gRPC Go Middlewares",
+      "name": "gRPC Middlewares",
       "path": "grpc-middleware",
       "deprecated": "",
       "hidden": true,
@@ -116,6 +116,48 @@
           "home_url": "https://github.com/nhatthm/go-grpc-middleware",
           "directory_url": "https://github.com/nhatthm/go-grpc-middleware/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-grpc-middleware/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "gRPC Mock",
+      "path": "grpcmock",
+      "deprecated": "",
+      "hidden": true,
+      "repository_url": "https://github.com/nhatthm/grpcmock",
+      "repository_name": "github.com/nhatthm/grpcmock",
+      "ref": "",
+      "latest_version": "v0.19.0",
+      "modules": [
+        {
+          "path": "grpcmock",
+          "import_prefix": "grpcmock",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/grpcmock",
+          "home_url": "https://github.com/nhatthm/grpcmock",
+          "directory_url": "https://github.com/nhatthm/grpcmock/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/grpcmock/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "HTTP Mock",
+      "path": "httpmock",
+      "deprecated": "",
+      "hidden": true,
+      "repository_url": "https://github.com/nhatthm/httpmock",
+      "repository_name": "github.com/nhatthm/httpmock",
+      "ref": "",
+      "latest_version": "v0.8.0",
+      "modules": [
+        {
+          "path": "httpmock",
+          "import_prefix": "httpmock",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/httpmock",
+          "home_url": "https://github.com/nhatthm/httpmock",
+          "directory_url": "https://github.com/nhatthm/httpmock/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/httpmock/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
@@ -146,6 +188,63 @@
           "home_url": "https://github.com/nhatthm/go-matcher",
           "directory_url": "https://github.com/nhatthm/go-matcher/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-matcher/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "OpenTelemetry SQL database driver wrapper",
+      "path": "otelsql",
+      "deprecated": "",
+      "hidden": true,
+      "repository_url": "https://github.com/nhatthm/otelsql",
+      "repository_name": "github.com/nhatthm/otelsql",
+      "ref": "",
+      "latest_version": "v0.4.2",
+      "modules": [
+        {
+          "path": "otelsql",
+          "import_prefix": "otelsql",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/otelsql",
+          "home_url": "https://github.com/nhatthm/otelsql",
+          "directory_url": "https://github.com/nhatthm/otelsql/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/otelsql/blob/master{/dir}/{file}#L{line}"
+        },
+        {
+          "path": "otelsql/tests/mssql",
+          "import_prefix": "otelsql",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/otelsql",
+          "home_url": "https://github.com/nhatthm/otelsql",
+          "directory_url": "https://github.com/nhatthm/otelsql/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/otelsql/blob/master{/dir}/{file}#L{line}"
+        },
+        {
+          "path": "otelsql/tests/mysql",
+          "import_prefix": "otelsql",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/otelsql",
+          "home_url": "https://github.com/nhatthm/otelsql",
+          "directory_url": "https://github.com/nhatthm/otelsql/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/otelsql/blob/master{/dir}/{file}#L{line}"
+        },
+        {
+          "path": "otelsql/tests/postgres",
+          "import_prefix": "otelsql",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/otelsql",
+          "home_url": "https://github.com/nhatthm/otelsql",
+          "directory_url": "https://github.com/nhatthm/otelsql/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/otelsql/blob/master{/dir}/{file}#L{line}"
+        },
+        {
+          "path": "otelsql/tests/suite",
+          "import_prefix": "otelsql",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/otelsql",
+          "home_url": "https://github.com/nhatthm/otelsql",
+          "directory_url": "https://github.com/nhatthm/otelsql/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/otelsql/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
@@ -303,7 +402,7 @@
       "name": "Testcontainers Go Extra",
       "path": "testcontainers-go-extra",
       "deprecated": "Use go.nhat.io/testcontainers-extra instead",
-      "hidden": false,
+      "hidden": true,
       "repository_url": "https://github.com/nhatthm/testcontainers-go-extra",
       "repository_name": "github.com/nhatthm/testcontainers-go-extra",
       "ref": "v0.4.0",
@@ -324,7 +423,7 @@
       "name": "Testcontainers Go Registry",
       "path": "testcontainers-go-registry",
       "deprecated": "Use go.nhat.io/testcontainers-registry instead",
-      "hidden": false,
+      "hidden": true,
       "repository_url": "https://github.com/nhatthm/testcontainers-go-registry",
       "repository_name": "github.com/nhatthm/testcontainers-go-registry",
       "ref": "v0.6.0",
