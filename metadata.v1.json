@@ -256,7 +256,7 @@
       "repository_url": "https://github.com/nhatthm/surveyexpect",
       "repository_name": "github.com/nhatthm/surveyexpect",
       "ref": "",
-      "latest_version": "v0.7.0",
+      "latest_version": "v0.8.0",
       "modules": [
         {
           "path": "surveyexpect",
