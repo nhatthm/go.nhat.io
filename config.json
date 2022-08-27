@@ -24,15 +24,33 @@
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
-      "name": "gRPC Go Middlewares",
+      "name": "gRPC Middlewares",
       "path": "grpc-middleware",
       "repository": "https://github.com/nhatthm/go-grpc-middleware",
+      "hidden": true
+    },
+    {
+      "name": "gRPC Mock",
+      "path": "grpcmock",
+      "repository": "https://github.com/nhatthm/grpcmock",
+      "hidden": true
+    },
+    {
+      "name": "HTTP Mock",
+      "path": "httpmock",
+      "repository": "https://github.com/nhatthm/httpmock",
       "hidden": true
     },
     {
       "name": "Matcher",
       "path": "matcher",
       "repository": "https://github.com/nhatthm/go-matcher"
+    },
+    {
+      "name": "OpenTelemetry SQL database driver wrapper",
+      "path": "otelsql",
+      "repository": "https://github.com/nhatthm/otelsql",
+      "hidden": true
     },
     {
       "name": "Expects for AlecAivazis/survey",
@@ -65,14 +83,16 @@
       "path": "testcontainers-go-extra",
       "repository": "https://github.com/nhatthm/testcontainers-go-extra",
       "ref": "v0.4.0",
-      "deprecated": "Use go.nhat.io/testcontainers-extra instead"
+      "deprecated": "Use go.nhat.io/testcontainers-extra instead",
+      "hidden": true
     },
     {
       "name": "Testcontainers Go Registry",
       "path": "testcontainers-go-registry",
       "repository": "https://github.com/nhatthm/testcontainers-go-registry",
       "ref": "v0.6.0",
-      "deprecated": "Use go.nhat.io/testcontainers-registry instead"
+      "deprecated": "Use go.nhat.io/testcontainers-registry instead",
+      "hidden": true
     }
   ]
 }
