@@ -1,5 +1,5 @@
 {
-  "checksum": "20b9921c69453c9947cdbab86668934232ee6ab8",
+  "checksum": "afc81712643d7219ea7abe9c96c8919e5a14a494",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -252,7 +252,7 @@
       "name": "Expects for AlecAivazis/survey",
       "path": "surveyexpect",
       "deprecated": "",
-      "hidden": true,
+      "hidden": false,
       "repository_url": "https://github.com/nhatthm/surveyexpect",
       "repository_name": "github.com/nhatthm/surveyexpect",
       "ref": "",
