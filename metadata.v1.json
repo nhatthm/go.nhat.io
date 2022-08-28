@@ -1,5 +1,5 @@
 {
-  "checksum": "afc81712643d7219ea7abe9c96c8919e5a14a494",
+  "checksum": "0295c543e281a477f44f86d581968b94bec1bfd5",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -123,7 +123,7 @@
       "name": "gRPC Mock",
       "path": "grpcmock",
       "deprecated": "",
-      "hidden": true,
+      "hidden": false,
       "repository_url": "https://github.com/nhatthm/grpcmock",
       "repository_name": "github.com/nhatthm/grpcmock",
       "ref": "",
