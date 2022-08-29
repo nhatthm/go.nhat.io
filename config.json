@@ -62,6 +62,11 @@
       "repository": "https://github.com/nhatthm/surveyexpect"
     },
     {
+      "name": "Survey steps for cucumber/godog",
+      "path": "surveysteps",
+      "repository": "https://github.com/nhatthm/surveysteps"
+    },
+    {
       "name": "Testcontainers Extra",
       "path": "testcontainers-extra",
       "repository": "https://github.com/nhatthm/testcontainers-go-extra"
