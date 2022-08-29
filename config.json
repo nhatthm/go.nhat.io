@@ -19,6 +19,11 @@
       "repository": "https://github.com/nhatthm/aferomock"
     },
     {
+      "name": "Afero steps for cucumber/godog",
+      "path": "aferosteps",
+      "repository": "https://github.com/nhatthm/aferosteps"
+    },
+    {
       "name": "Clock",
       "path": "clock",
       "repository": "https://github.com/nhatthm/go-clock"
