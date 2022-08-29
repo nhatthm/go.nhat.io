@@ -1,5 +1,5 @@
 {
-  "checksum": "0295c543e281a477f44f86d581968b94bec1bfd5",
+  "checksum": "02961971436c0aef247bab0a8044b42a5f4a8955",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -95,6 +95,27 @@
           "home_url": "https://github.com/nhatthm/go-clock",
           "directory_url": "https://github.com/nhatthm/go-clock/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-clock/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Terminal Emulator steps for cucumber/godog",
+      "path": "consolesteps",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/consolesteps",
+      "repository_name": "github.com/nhatthm/consolesteps",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "consolesteps",
+          "import_prefix": "consolesteps",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/consolesteps",
+          "home_url": "https://github.com/nhatthm/consolesteps",
+          "directory_url": "https://github.com/nhatthm/consolesteps/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/consolesteps/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
