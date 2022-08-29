@@ -24,6 +24,11 @@
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
+      "name": "Terminal Emulator steps for cucumber/godog",
+      "path": "consolesteps",
+      "repository": "https://github.com/nhatthm/consolesteps"
+    },
+    {
       "name": "gRPC Middlewares",
       "path": "grpc-middleware",
       "repository": "https://github.com/nhatthm/go-grpc-middleware",
