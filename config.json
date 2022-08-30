@@ -42,8 +42,7 @@
     {
       "name": "HTTP Mock",
       "path": "httpmock",
-      "repository": "https://github.com/nhatthm/httpmock",
-      "hidden": true
+      "repository": "https://github.com/nhatthm/httpmock"
     },
     {
       "name": "Matcher",
