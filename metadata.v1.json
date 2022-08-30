@@ -1,5 +1,5 @@
 {
-  "checksum": "c5ec7bc5b26c20d9f6691fd050e86661e74996b1",
+  "checksum": "662f755674511f82dd7ce4dbb8a4f796a3b6f7aa",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -165,7 +165,7 @@
       "name": "HTTP Mock",
       "path": "httpmock",
       "deprecated": "",
-      "hidden": true,
+      "hidden": false,
       "repository_url": "https://github.com/nhatthm/httpmock",
       "repository_name": "github.com/nhatthm/httpmock",
       "ref": "",
