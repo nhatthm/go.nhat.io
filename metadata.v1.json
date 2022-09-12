@@ -184,13 +184,13 @@
     },
     {
       "name": "Matcher",
-      "path": "matcher/v2",
+      "path": "matcher/v3",
       "deprecated": "",
       "hidden": false,
       "repository_url": "https://github.com/nhatthm/go-matcher",
       "repository_name": "github.com/nhatthm/go-matcher",
       "ref": "",
-      "latest_version": "v2.0.0",
+      "latest_version": "v3.0.0",
       "modules": [
         {
           "path": "matcher",
@@ -203,6 +203,15 @@
         },
         {
           "path": "matcher/v2",
+          "import_prefix": "matcher",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-matcher",
+          "home_url": "https://github.com/nhatthm/go-matcher",
+          "directory_url": "https://github.com/nhatthm/go-matcher/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-matcher/blob/master{/dir}/{file}#L{line}"
+        },
+        {
+          "path": "matcher/v3",
           "import_prefix": "matcher",
           "vcs": "git",
           "repository_url": "https://github.com/nhatthm/go-matcher",
