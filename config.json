@@ -50,10 +50,9 @@
       "repository": "https://github.com/nhatthm/go-matcher"
     },
     {
-      "name": "OpenTelemetry SQL database driver wrapper",
+      "name": "OpenTelemetry Wrapper for SQL database driver",
       "path": "otelsql",
       "repository": "https://github.com/nhatthm/otelsql",
-      "hidden": true
     },
     {
       "name": "Expects for AlecAivazis/survey",
