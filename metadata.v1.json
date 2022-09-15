@@ -1,5 +1,5 @@
 {
-  "checksum": "662f755674511f82dd7ce4dbb8a4f796a3b6f7aa",
+  "checksum": "93b403c411bc5535a88a66b4ba1ed3abdc91bdd7",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -222,14 +222,14 @@
       ]
     },
     {
-      "name": "OpenTelemetry SQL database driver wrapper",
+      "name": "OpenTelemetry Wrapper for SQL database driver",
       "path": "otelsql",
       "deprecated": "",
-      "hidden": true,
+      "hidden": false,
       "repository_url": "https://github.com/nhatthm/otelsql",
       "repository_name": "github.com/nhatthm/otelsql",
       "ref": "",
-      "latest_version": "v0.4.2",
+      "latest_version": "v0.5.0",
       "modules": [
         {
           "path": "otelsql",
