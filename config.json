@@ -52,7 +52,7 @@
     {
       "name": "OpenTelemetry Wrapper for SQL database driver",
       "path": "otelsql",
-      "repository": "https://github.com/nhatthm/otelsql",
+      "repository": "https://github.com/nhatthm/otelsql"
     },
     {
       "name": "Expects for AlecAivazis/survey",
