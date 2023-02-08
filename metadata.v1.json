@@ -169,7 +169,7 @@
       "repository_url": "https://github.com/nhatthm/httpmock",
       "repository_name": "github.com/nhatthm/httpmock",
       "ref": "",
-      "latest_version": "v0.10.0",
+      "latest_version": "v0.11.0",
       "modules": [
         {
           "path": "httpmock",
