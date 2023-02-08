@@ -1,5 +1,5 @@
 {
-  "checksum": "93b403c411bc5535a88a66b4ba1ed3abdc91bdd7",
+  "checksum": "f9091ca2c8e0db6d069700673fdbda8ddaf47fa6",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -533,6 +533,27 @@
           "home_url": "https://github.com/nhatthm/testcontainers-go-registry",
           "directory_url": "https://github.com/nhatthm/testcontainers-go-registry/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/testcontainers-go-registry/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Wait",
+      "path": "wait",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-wait",
+      "repository_name": "github.com/nhatthm/go-wait",
+      "ref": "",
+      "latest_version": "v0.1.0",
+      "modules": [
+        {
+          "path": "wait",
+          "import_prefix": "wait",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-wait",
+          "home_url": "https://github.com/nhatthm/go-wait",
+          "directory_url": "https://github.com/nhatthm/go-wait/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-wait/blob/master{/dir}/{file}#L{line}"
         }
       ]
     }
