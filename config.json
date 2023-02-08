@@ -99,6 +99,11 @@
       "ref": "v0.6.0",
       "deprecated": "Use go.nhat.io/testcontainers-registry instead",
       "hidden": true
+    },
+    {
+      "name": "Wait",
+      "path": "wait",
+      "repository": "https://github.com/nhatthm/go-wait"
     }
   ]
 }
