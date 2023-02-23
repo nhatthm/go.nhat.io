@@ -1,5 +1,5 @@
 {
-  "checksum": "f9091ca2c8e0db6d069700673fdbda8ddaf47fa6",
+  "checksum": "24db71e9a819db85917a0611b8dc82dfb0585a25",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -95,6 +95,27 @@
           "home_url": "https://github.com/nhatthm/go-clock",
           "directory_url": "https://github.com/nhatthm/go-clock/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-clock/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "CookieJar",
+      "path": "cookiejar",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-cookiejar",
+      "repository_name": "github.com/nhatthm/go-cookiejar",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "cookiejar",
+          "import_prefix": "cookiejar",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-cookiejar",
+          "home_url": "https://github.com/nhatthm/go-cookiejar",
+          "directory_url": "https://github.com/nhatthm/go-cookiejar/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-cookiejar/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
