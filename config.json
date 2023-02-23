@@ -24,6 +24,11 @@
       "repository": "https://github.com/nhatthm/go-clock"
     },
     {
+      "name": "CookieJar",
+      "path": "cookiejar",
+      "repository": "https://github.com/nhatthm/go-cookiejar"
+    },
+    {
       "name": "Terminal Emulator steps for cucumber/godog",
       "path": "consolesteps",
       "repository": "https://github.com/nhatthm/consolesteps"
