@@ -34,6 +34,11 @@
       "repository": "https://github.com/nhatthm/consolesteps"
     },
     {
+      "name": "Exec",
+      "path": "exec",
+      "repository": "https://github.com/nhatthm/go-exec"
+    },
+    {
       "name": "gRPC Middlewares",
       "path": "grpc-middleware",
       "repository": "https://github.com/nhatthm/go-grpc-middleware",
