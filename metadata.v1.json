@@ -1,5 +1,5 @@
 {
-  "checksum": "24db71e9a819db85917a0611b8dc82dfb0585a25",
+  "checksum": "385a079e466c550746e42e743598d5d8358f2bf9",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -137,6 +137,27 @@
           "home_url": "https://github.com/nhatthm/consolesteps",
           "directory_url": "https://github.com/nhatthm/consolesteps/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/consolesteps/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Exec",
+      "path": "exec",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-exec",
+      "repository_name": "github.com/nhatthm/go-exec",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "exec",
+          "import_prefix": "exec",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-exec",
+          "home_url": "https://github.com/nhatthm/go-exec",
+          "directory_url": "https://github.com/nhatthm/go-exec/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-exec/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
