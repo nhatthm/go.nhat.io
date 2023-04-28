@@ -271,7 +271,7 @@
       "repository_url": "https://github.com/nhatthm/otelsql",
       "repository_name": "github.com/nhatthm/otelsql",
       "ref": "",
-      "latest_version": "v0.9.0",
+      "latest_version": "v0.10.0",
       "modules": [
         {
           "path": "otelsql",
