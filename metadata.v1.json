@@ -391,7 +391,7 @@
       "repository_url": "https://github.com/nhatthm/testcontainers-go-registry",
       "repository_name": "github.com/nhatthm/testcontainers-go-registry",
       "ref": "",
-      "latest_version": "v0.12.0",
+      "latest_version": "v0.13.0",
       "modules": [
         {
           "path": "testcontainers-registry",
