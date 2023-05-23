@@ -1,5 +1,5 @@
 {
-  "checksum": "385a079e466c550746e42e743598d5d8358f2bf9",
+  "checksum": "c96a5b5412ec9063b59a2930804b831a0abc6493",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -338,6 +338,27 @@
           "home_url": "https://github.com/nhatthm/surveyexpect",
           "directory_url": "https://github.com/nhatthm/surveyexpect/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/surveyexpect/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Redact",
+      "path": "redact",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-redact",
+      "repository_name": "github.com/nhatthm/go-redact",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "redact",
+          "import_prefix": "redact",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-redact",
+          "home_url": "https://github.com/nhatthm/go-redact",
+          "directory_url": "https://github.com/nhatthm/go-redact/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-redact/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
