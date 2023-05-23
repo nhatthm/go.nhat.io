@@ -478,7 +478,7 @@
       "repository_url": "https://github.com/nhatthm/govanityrender",
       "repository_name": "github.com/nhatthm/govanityrender",
       "ref": "",
-      "latest_version": "v0.8.9",
+      "latest_version": "v0.8.10",
       "modules": [
         {
           "path": "vanityrender",
