@@ -60,6 +60,11 @@
       "repository": "https://github.com/nhatthm/go-matcher"
     },
     {
+      "name": "Once",
+      "path": "once",
+      "repository": "https://github.com/nhatthm/go-once"
+    },
+    {
       "name": "OpenTelemetry Wrapper for SQL database driver",
       "path": "otelsql",
       "repository": "https://github.com/nhatthm/otelsql"
