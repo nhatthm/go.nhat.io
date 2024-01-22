@@ -127,7 +127,7 @@
       "repository_url": "https://github.com/nhatthm/consolesteps",
       "repository_name": "github.com/nhatthm/consolesteps",
       "ref": "",
-      "latest_version": "v0.1.0",
+      "latest_version": "v0.2.0",
       "modules": [
         {
           "path": "consolesteps",
