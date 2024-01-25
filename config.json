@@ -80,6 +80,11 @@
       "repository": "https://github.com/nhatthm/go-redact"
     },
     {
+      "name": "RequestID",
+      "path": "requestid",
+      "repository": "https://github.com/nhatthm/go-requestid"
+    },
+    {
       "name": "Survey steps for cucumber/godog",
       "path": "surveysteps",
       "repository": "https://github.com/nhatthm/surveysteps"
