@@ -1,5 +1,5 @@
 {
-  "checksum": "27710efdd677d392424afe7f74deae81c2c0a4c6",
+  "checksum": "e9c2c8b7ea8a76d81fb18d9caca67446c8b0e18d",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -221,6 +221,27 @@
           "home_url": "https://github.com/nhatthm/httpmock",
           "directory_url": "https://github.com/nhatthm/httpmock/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/httpmock/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Ligaturizer",
+      "path": "ligaturizer",
+      "deprecated": "",
+      "hidden": true,
+      "repository_url": "https://github.com/nhatthm/ligaturizer",
+      "repository_name": "github.com/nhatthm/ligaturizer",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "ligaturizer",
+          "import_prefix": "ligaturizer",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/ligaturizer",
+          "home_url": "https://github.com/nhatthm/ligaturizer",
+          "directory_url": "https://github.com/nhatthm/ligaturizer/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/ligaturizer/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
