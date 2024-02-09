@@ -39,6 +39,11 @@
       "repository": "https://github.com/nhatthm/go-exec"
     },
     {
+      "name": "Go bindings for the CPython-3 C-API",
+      "path": "cpy3",
+      "repository": "https://github.com/nhatthm/cpy3"
+    },
+    {
       "name": "gRPC Middlewares",
       "path": "grpc-middleware",
       "repository": "https://github.com/nhatthm/go-grpc-middleware",
