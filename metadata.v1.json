@@ -1,5 +1,5 @@
 {
-  "checksum": "e9c2c8b7ea8a76d81fb18d9caca67446c8b0e18d",
+  "checksum": "a65366abbf4e79429152a03d0c289103b9148871",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -158,6 +158,27 @@
           "home_url": "https://github.com/nhatthm/go-exec",
           "directory_url": "https://github.com/nhatthm/go-exec/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-exec/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Go bindings for the CPython-3 C-API",
+      "path": "cpy3",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/cpy3",
+      "repository_name": "github.com/nhatthm/cpy3",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "cpy3",
+          "import_prefix": "cpy3",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/cpy3",
+          "home_url": "https://github.com/nhatthm/cpy3",
+          "directory_url": "https://github.com/nhatthm/cpy3/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/cpy3/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
