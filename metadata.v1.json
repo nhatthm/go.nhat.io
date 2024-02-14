@@ -1,5 +1,5 @@
 {
-  "checksum": "c20cfae36eb18b07ae73b2e8245ea6ffcad894de",
+  "checksum": "1ef57907cb1184db8e27e4ec9020fc6bdb624b88",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -200,6 +200,27 @@
           "home_url": "https://github.com/nhatthm/go-python3",
           "directory_url": "https://github.com/nhatthm/go-python3/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-python3/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Go bindings for the Python psMat module",
+      "path": "psmat",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-psMat",
+      "repository_name": "github.com/nhatthm/go-psMat",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "psmat",
+          "import_prefix": "psmat",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-psMat",
+          "home_url": "https://github.com/nhatthm/go-psMat",
+          "directory_url": "https://github.com/nhatthm/go-psMat/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-psMat/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
