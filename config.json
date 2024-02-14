@@ -49,6 +49,11 @@
       "repository": "https://github.com/nhatthm/go-python3"
     },
     {
+      "name": "Go bindings for the Python psMat module",
+      "path": "psmat",
+      "repository": "https://github.com/nhatthm/go-psMat"
+    },
+    {
       "name": "gRPC Middlewares",
       "path": "grpc-middleware",
       "repository": "https://github.com/nhatthm/go-grpc-middleware",
