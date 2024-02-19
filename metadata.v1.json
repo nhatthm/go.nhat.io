@@ -1,5 +1,5 @@
 {
-  "checksum": "1ef57907cb1184db8e27e4ec9020fc6bdb624b88",
+  "checksum": "8fd951f8ca5225128cc22e524da191fe2b1627b9",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -200,6 +200,27 @@
           "home_url": "https://github.com/nhatthm/go-python3",
           "directory_url": "https://github.com/nhatthm/go-python3/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-python3/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Go bindings for the Python fontforge module",
+      "path": "fontforge",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-fontforge",
+      "repository_name": "github.com/nhatthm/go-fontforge",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "fontforge",
+          "import_prefix": "fontforge",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-fontforge",
+          "home_url": "https://github.com/nhatthm/go-fontforge",
+          "directory_url": "https://github.com/nhatthm/go-fontforge/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-fontforge/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
