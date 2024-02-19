@@ -1,5 +1,5 @@
 {
-  "checksum": "8fd951f8ca5225128cc22e524da191fe2b1627b9",
+  "checksum": "1e9ac0451c0fe6800e796e855cd9d3c0318b7504",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -162,32 +162,23 @@
       ]
     },
     {
-      "name": "Go bindings for the CPython-3 C-API",
-      "path": "cpy3/v3",
+      "name": "Go bindings for the Python C-API",
+      "path": "cpy/v3",
       "deprecated": "",
       "hidden": false,
-      "repository_url": "https://github.com/nhatthm/cpy3",
-      "repository_name": "github.com/nhatthm/cpy3",
+      "repository_url": "https://github.com/nhatthm/go-cpy",
+      "repository_name": "github.com/nhatthm/go-cpy",
       "ref": "",
-      "latest_version": "v3.11.0",
+      "latest_version": "v3.0.0",
       "modules": [
         {
-          "path": "cpy3",
-          "import_prefix": "cpy3",
+          "path": "cpy/v3",
+          "import_prefix": "cpy",
           "vcs": "git",
-          "repository_url": "https://github.com/nhatthm/cpy3",
-          "home_url": "https://github.com/nhatthm/cpy3",
-          "directory_url": "https://github.com/nhatthm/cpy3/tree/master{/dir}",
-          "file_url": "https://github.com/nhatthm/cpy3/blob/master{/dir}/{file}#L{line}"
-        },
-        {
-          "path": "cpy3/v3",
-          "import_prefix": "cpy3",
-          "vcs": "git",
-          "repository_url": "https://github.com/nhatthm/cpy3",
-          "home_url": "https://github.com/nhatthm/cpy3",
-          "directory_url": "https://github.com/nhatthm/cpy3/tree/master{/dir}",
-          "file_url": "https://github.com/nhatthm/cpy3/blob/master{/dir}/{file}#L{line}"
+          "repository_url": "https://github.com/nhatthm/go-cpy",
+          "home_url": "https://github.com/nhatthm/go-cpy",
+          "directory_url": "https://github.com/nhatthm/go-cpy/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-cpy/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
