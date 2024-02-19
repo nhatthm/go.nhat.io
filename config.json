@@ -41,7 +41,7 @@
     {
       "name": "Go bindings for the Python C-API",
       "path": "cpy",
-      "repository": "https://github.com/nhatthm/cpy"
+      "repository": "https://github.com/nhatthm/go-cpy"
     },
     {
       "name": "Go high-level bindings for the CPython-3 C-API",
