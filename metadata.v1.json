@@ -193,16 +193,25 @@
     },
     {
       "name": "Go high-level bindings for the Python C-API",
-      "path": "python",
+      "path": "python/v3",
       "deprecated": "",
       "hidden": false,
       "repository_url": "https://github.com/nhatthm/go-python",
       "repository_name": "github.com/nhatthm/go-python",
       "ref": "",
-      "latest_version": "v0.0.0",
+      "latest_version": "v3.0.0",
       "modules": [
         {
           "path": "python",
+          "import_prefix": "python",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-python",
+          "home_url": "https://github.com/nhatthm/go-python",
+          "directory_url": "https://github.com/nhatthm/go-python/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-python/blob/master{/dir}/{file}#L{line}"
+        },
+        {
+          "path": "python/v3",
           "import_prefix": "python",
           "vcs": "git",
           "repository_url": "https://github.com/nhatthm/go-python",
