@@ -49,6 +49,11 @@
       "repository": "https://github.com/nhatthm/go-python3"
     },
     {
+      "name": "Go bindings for the Python fontforge module",
+      "path": "fontforge",
+      "repository": "https://github.com/nhatthm/go-fontforge"
+    },
+    {
       "name": "Go bindings for the Python psMat module",
       "path": "psmat",
       "repository": "https://github.com/nhatthm/go-psMat"
