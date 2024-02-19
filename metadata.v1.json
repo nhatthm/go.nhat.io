@@ -199,7 +199,7 @@
       "repository_url": "https://github.com/nhatthm/go-python",
       "repository_name": "github.com/nhatthm/go-python",
       "ref": "",
-      "latest_version": "v3.11.0",
+      "latest_version": "v3.11.1",
       "modules": [
         {
           "path": "python",
