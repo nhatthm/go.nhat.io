@@ -1,5 +1,5 @@
 {
-  "checksum": "1e9ac0451c0fe6800e796e855cd9d3c0318b7504",
+  "checksum": "742131388bc7b096011b69fecdd9d04006d6e7f8",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -192,23 +192,23 @@
       ]
     },
     {
-      "name": "Go high-level bindings for the CPython-3 C-API",
-      "path": "python3",
+      "name": "Go high-level bindings for the Python C-API",
+      "path": "python",
       "deprecated": "",
       "hidden": false,
-      "repository_url": "https://github.com/nhatthm/go-python3",
-      "repository_name": "github.com/nhatthm/go-python3",
+      "repository_url": "https://github.com/nhatthm/go-python",
+      "repository_name": "github.com/nhatthm/go-python",
       "ref": "",
       "latest_version": "v0.0.0",
       "modules": [
         {
-          "path": "python3",
-          "import_prefix": "python3",
+          "path": "python",
+          "import_prefix": "python",
           "vcs": "git",
-          "repository_url": "https://github.com/nhatthm/go-python3",
-          "home_url": "https://github.com/nhatthm/go-python3",
-          "directory_url": "https://github.com/nhatthm/go-python3/tree/master{/dir}",
-          "file_url": "https://github.com/nhatthm/go-python3/blob/master{/dir}/{file}#L{line}"
+          "repository_url": "https://github.com/nhatthm/go-python",
+          "home_url": "https://github.com/nhatthm/go-python",
+          "directory_url": "https://github.com/nhatthm/go-python/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-python/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
