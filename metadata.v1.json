@@ -169,7 +169,7 @@
       "repository_url": "https://github.com/nhatthm/go-cpy",
       "repository_name": "github.com/nhatthm/go-cpy",
       "ref": "",
-      "latest_version": "v3.0.0",
+      "latest_version": "v3.11.0",
       "modules": [
         {
           "path": "cpy/v3",
