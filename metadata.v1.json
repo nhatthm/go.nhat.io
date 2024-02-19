@@ -172,6 +172,15 @@
       "latest_version": "v3.11.0",
       "modules": [
         {
+          "path": "cpy",
+          "import_prefix": "cpy",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-cpy",
+          "home_url": "https://github.com/nhatthm/go-cpy",
+          "directory_url": "https://github.com/nhatthm/go-cpy/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-cpy/blob/master{/dir}/{file}#L{line}"
+        },
+        {
           "path": "cpy/v3",
           "import_prefix": "cpy",
           "vcs": "git",
