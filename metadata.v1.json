@@ -250,7 +250,7 @@
       "repository_url": "https://github.com/nhatthm/go-psMat",
       "repository_name": "github.com/nhatthm/go-psMat",
       "ref": "",
-      "latest_version": "v0.0.0",
+      "latest_version": "v0.1.0",
       "modules": [
         {
           "path": "psmat",
