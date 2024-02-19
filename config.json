@@ -39,9 +39,9 @@
       "repository": "https://github.com/nhatthm/go-exec"
     },
     {
-      "name": "Go bindings for the CPython-3 C-API",
-      "path": "cpy3",
-      "repository": "https://github.com/nhatthm/cpy3"
+      "name": "Go bindings for the Python C-API",
+      "path": "cpy",
+      "repository": "https://github.com/nhatthm/cpy"
     },
     {
       "name": "Go high-level bindings for the CPython-3 C-API",
