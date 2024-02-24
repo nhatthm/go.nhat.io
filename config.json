@@ -96,6 +96,11 @@
       "repository": "https://github.com/nhatthm/otelsql"
     },
     {
+      "name": "One-time password",
+      "path": "otp",
+      "repository": "https://github.com/nhatthm/go-otp"
+    },
+    {
       "name": "Expects for AlecAivazis/survey",
       "path": "surveyexpect",
       "repository": "https://github.com/nhatthm/surveyexpect"
