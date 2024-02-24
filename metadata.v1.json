@@ -1,5 +1,5 @@
 {
-  "checksum": "742131388bc7b096011b69fecdd9d04006d6e7f8",
+  "checksum": "749b5b48230e5d89c03f717e2afa967fd8aafd67",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -461,6 +461,27 @@
           "home_url": "https://github.com/nhatthm/otelsql",
           "directory_url": "https://github.com/nhatthm/otelsql/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/otelsql/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "One-time password",
+      "path": "otp",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-otp",
+      "repository_name": "github.com/nhatthm/go-otp",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "otp",
+          "import_prefix": "otp",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-otp",
+          "home_url": "https://github.com/nhatthm/go-otp",
+          "directory_url": "https://github.com/nhatthm/go-otp/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-otp/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
