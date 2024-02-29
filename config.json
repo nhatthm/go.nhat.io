@@ -116,6 +116,11 @@
       "repository": "https://github.com/nhatthm/go-requestid"
     },
     {
+      "name": "Secret Storage",
+      "path": "secretstorage",
+      "repository": "https://github.com/nhatthm/go-secretstorage"
+    },
+    {
       "name": "Survey steps for cucumber/godog",
       "path": "surveysteps",
       "repository": "https://github.com/nhatthm/surveysteps"
