@@ -1,5 +1,5 @@
 {
-  "checksum": "749b5b48230e5d89c03f717e2afa967fd8aafd67",
+  "checksum": "45b0eb7b1adcb18370bb98dbdfa354bc9ae50f1f",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -554,6 +554,27 @@
           "home_url": "https://github.com/nhatthm/go-requestid",
           "directory_url": "https://github.com/nhatthm/go-requestid/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/go-requestid/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Secret Storage",
+      "path": "secretstorage",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-secretstorage",
+      "repository_name": "github.com/nhatthm/go-secretstorage",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "secretstorage",
+          "import_prefix": "secretstorage",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-secretstorage",
+          "home_url": "https://github.com/nhatthm/go-secretstorage",
+          "directory_url": "https://github.com/nhatthm/go-secretstorage/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-secretstorage/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
