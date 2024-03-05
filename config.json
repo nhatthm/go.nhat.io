@@ -19,6 +19,11 @@
       "repository": "https://github.com/nhatthm/aferomock"
     },
     {
+      "name": "Authenticator",
+      "path": "authenticator",
+      "repository": "https://github.com/nhatthm/go-authenticator"
+    },
+    {
       "name": "Clock",
       "path": "clock",
       "repository": "https://github.com/nhatthm/go-clock"
