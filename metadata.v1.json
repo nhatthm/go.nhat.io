@@ -1,5 +1,5 @@
 {
-  "checksum": "45b0eb7b1adcb18370bb98dbdfa354bc9ae50f1f",
+  "checksum": "587e58026c2a7c09b5ad1d92bad565c4d9ada8af",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -74,6 +74,27 @@
           "home_url": "https://github.com/nhatthm/aferomock",
           "directory_url": "https://github.com/nhatthm/aferomock/tree/master{/dir}",
           "file_url": "https://github.com/nhatthm/aferomock/blob/master{/dir}/{file}#L{line}"
+        }
+      ]
+    },
+    {
+      "name": "Authenticator",
+      "path": "authenticator",
+      "deprecated": "",
+      "hidden": false,
+      "repository_url": "https://github.com/nhatthm/go-authenticator",
+      "repository_name": "github.com/nhatthm/go-authenticator",
+      "ref": "",
+      "latest_version": "v0.0.0",
+      "modules": [
+        {
+          "path": "authenticator",
+          "import_prefix": "authenticator",
+          "vcs": "git",
+          "repository_url": "https://github.com/nhatthm/go-authenticator",
+          "home_url": "https://github.com/nhatthm/go-authenticator",
+          "directory_url": "https://github.com/nhatthm/go-authenticator/tree/master{/dir}",
+          "file_url": "https://github.com/nhatthm/go-authenticator/blob/master{/dir}/{file}#L{line}"
         }
       ]
     },
