@@ -493,7 +493,7 @@
       "repository_url": "https://github.com/nhatthm/go-otp",
       "repository_name": "github.com/nhatthm/go-otp",
       "ref": "",
-      "latest_version": "v0.5.0",
+      "latest_version": "v0.6.0",
       "modules": [
         {
           "path": "otp",
