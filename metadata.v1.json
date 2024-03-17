@@ -586,7 +586,7 @@
       "repository_url": "https://github.com/nhatthm/go-secretstorage",
       "repository_name": "github.com/nhatthm/go-secretstorage",
       "ref": "",
-      "latest_version": "v0.3.0",
+      "latest_version": "v0.4.0",
       "modules": [
         {
           "path": "secretstorage",
