@@ -313,7 +313,7 @@
       "repository_url": "https://github.com/nhatthm/grpcmock",
       "repository_name": "github.com/nhatthm/grpcmock",
       "ref": "",
-      "latest_version": "v0.27.0",
+      "latest_version": "v0.28.0",
       "modules": [
         {
           "path": "grpcmock",
