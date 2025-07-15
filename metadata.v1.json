@@ -628,7 +628,7 @@
       "repository_url": "https://github.com/nhatthm/testcontainers-go-extra",
       "repository_name": "github.com/nhatthm/testcontainers-go-extra",
       "ref": "",
-      "latest_version": "v0.16.0",
+      "latest_version": "v0.17.0",
       "modules": [
         {
           "path": "testcontainers-extra",
