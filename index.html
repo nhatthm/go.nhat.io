@@ -1,371 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <title>Open Source Go Modules</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://go.dev/favicon.ico" />
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <style media="all">
-        .container {
-            padding-top: 30px;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        .deprecated {
-            color: #f44336;
-        }
-
-        .footer {
-            padding-top: 2.5em;
-            font-size: 0.8em;
-        }
-
-        .octocat {
-            border: 0;
-            color: #f4f5f6;
-            fill: #9b4dca;
-            height: 5.2rem;
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 5.2rem;
-            z-index: 2;
-        }
-
-        .octocat .octocat-arm, .octocat .octocat-body {
-            fill: #f4f5f6;
-        }
-
-        .octocat .octocat-arm, .octocat .octocat-body {
-            fill: #f4f5f6;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<title>Open Source Go Modules</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://go.dev/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #F7F7FB; --ink: #14162B; --body: #4C4F66; --mute: #63667F;
+  --line: #E1E1EC; --btn: #2547E8; --btn-ink: #FFFFFF; --accent: #2547E8;
+  --card: #FFFFFF; --code: #14162B; --code-ink: #EEEEF6; --hover: rgba(37,71,232,.045);
+  --warn: #B4361D; --warn-line: rgba(180,54,29,.30);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0E0F1A; --ink: #EEEEF6; --body: #A2A5BC; --mute: #8A8DA6;
+    --line: #22243A; --btn: #8AA8FF; --btn-ink: #0E0F1A; --accent: #8AA8FF;
+    --card: #14162B; --code: #191B2E; --code-ink: #EEEEF6; --hover: rgba(138,168,255,.07);
+    --warn: #FF9E86; --warn-line: rgba(255,158,134,.32);
+  }
+}
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+body { margin: 0; background: var(--bg); font-family: 'Outfit', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--ink); text-decoration: none; }
+a:hover { opacity: .7; }
+.mark-link { text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid var(--line); transition: border-bottom-width .2s cubic-bezier(.4,0,.2,1), border-color .2s cubic-bezier(.4,0,.2,1); }
+.mark-link:hover { opacity: 1; color: var(--mute); border-bottom: 2px solid var(--mute); }
+input { font-family: inherit; }
+input::placeholder { color: var(--mute); opacity: 1; }
+button { font-family: inherit; cursor: pointer; }
+.coffee-rail { display: flex; }
+.coffee-inline { display: none; }
+.wrap { width: 100%; max-width: 720px; margin: 0 auto; padding: 56px 0 80px; display: flex; flex-direction: column; }
+.usage-bar { display: flex; align-items: center; gap: 12px; background: var(--code); border-radius: 16px; padding: 18px 20px; }
+.usage-code { flex: 1; min-width: 0; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14.5px; line-height: 1.5; color: var(--code-ink); white-space: nowrap; }
+.usage-copy { flex: none; border: 1px solid rgba(255,255,255,.18); background: transparent; color: var(--code-ink); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; transition: opacity .2s cubic-bezier(.4,0,.2,1); }
+.usage-copy:hover { opacity: .65; }
+.list-head { margin-top: 34px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.list-count { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); }
+.list-filter { flex: 0 1 240px; background: transparent; border: none; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 15px; font-weight: 400; padding: 6px 2px; outline: none; transition: border-color .2s cubic-bezier(.4,0,.2,1); }
+.list-filter:focus { border-bottom-color: var(--accent); }
+.list { display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; padding: 13px 12px; margin: 0 -12px; border-bottom: 1px solid var(--line); border-radius: 12px; transition: background-color .2s cubic-bezier(.4,0,.2,1); }
+.row:hover { background: var(--hover); }
+.row-main { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.row-title { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.row-name { font-size: 16.5px; font-weight: 500; line-height: 1.35; letter-spacing: -0.01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row-badge { flex: none; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warn); border: 1px solid var(--warn-line); padding: 2px 8px; border-radius: 999px; }
+.row-path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: var(--mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row-deprecated { font-size: 13px; font-weight: 400; line-height: 1.5; color: var(--warn); }
+.row-deprecated code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.row-end { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.row-copy { border: 1px solid var(--line); background: transparent; color: var(--mute); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; font-weight: 500; padding: 6px 12px; border-radius: 999px; transition: color .2s cubic-bezier(.4,0,.2,1), border-color .2s cubic-bezier(.4,0,.2,1); }
+.row-copy:hover { color: var(--accent); border-color: var(--accent); }
+.row-repo { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 999px; border: 1px solid var(--line); color: var(--mute); }
+.row-repo:hover { color: var(--accent); border-color: var(--accent); opacity: 1; }
+.empty { margin: 34px 0 0; text-align: center; font-size: 16px; font-weight: 300; color: var(--mute); display: none; }
+.contribute { margin-top: 56px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.contribute-label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); }
+.contribute-copy { margin: 0; max-width: 44ch; font-size: 17px; font-weight: 300; line-height: 1.7; color: var(--body); }
+.contribute-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 4px; }
+.btn-solid { padding: 12px 24px; border-radius: 999px; background: var(--btn); color: var(--btn-ink); font-size: 15px; font-weight: 500; }
+.btn-outline { padding: 12px 24px; border-radius: 999px; border: 1px solid var(--line); font-size: 15px; font-weight: 500; }
+.btn-outline.accent { color: var(--accent); }
+.render-footer { margin-top: 26px; font-size: 13.5px; font-weight: 300; color: var(--mute); }
+@media (max-width: 900px) { .coffee-rail { display: none; } .coffee-inline { display: inline-flex; } }
+@media (max-width: 640px) { .row { grid-template-columns: 1fr !important; gap: 6px !important; } .row-end { justify-content: flex-start !important; } }
+</style>
 </head>
 <body>
-    <section class="container">
-        <a href="https://github.com/nhatthm/go.nhat.io" rel="noopener" target="_blank">
-            <svg class="octocat" viewBox="0 0 250 250"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-                <path class="octocat-arm" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
-                <path class="octocat-body" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
-            </svg>
+<a class="coffee-rail" href="https://donate.nhat.me" target="_blank" rel="noopener noreferrer" style="position:fixed; right:20px; top:50%; transform:translateY(-50%); z-index:30; flex-direction:column; align-items:center; gap:8px; padding:16px 12px; border-radius:999px; background:var(--bg); border:1px solid var(--line); box-shadow:0 6px 20px rgba(20,22,43,.10); font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent)">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z"></path><path d="M17 9h1.6a2.4 2.4 0 0 1 0 4.8H17"></path><path d="M7 4.5c0 .8.8 1 .8 1.8"></path><path d="M11 4c0 .9.9 1.2.9 2.1"></path></svg>
+  <span style="writing-mode:vertical-rl">Buy me a coffee</span>
+</a>
+
+<nav style="max-width:720px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 28px; border-bottom:1px solid var(--line); font-size:15px; font-weight:500">
+  <a href="https://nhat.me">About me</a>
+  <a href="https://go.nhat.io" style="color:var(--accent)">Go registry</a>
+  <a href="https://fonts.nhat.io">Ligaturized fonts</a>
+</nav>
+
+<div class="wrap" style="padding-left:28px; padding-right:28px">
+  <div class="usage-bar">
+    <code id="usage-code" class="usage-code"><span style="opacity:.5">$</span> go get -u go.nhat.io/&lt;MODULE&gt;</code>
+    <button type="button" id="usage-copy" class="usage-copy" data-copy-text="go get -u go.nhat.io/&lt;MODULE&gt;">Copy</button>
+  </div>
+
+  <div class="list-head">
+    <span id="list-count" class="list-count"></span>
+    <input id="list-filter" class="list-filter" type="text" placeholder="Filter modules" autocomplete="off">
+  </div>
+
+  <div id="list" class="list">
+    <div class="row" data-search="Afero Assert aferoassert">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/aferoassert" target="_blank" rel="noopener noreferrer">Afero Assert</a>
+        </div>
+        <span class="row-path">go.nhat.io/aferoassert</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/aferoassert@v0.4.0">v0.4.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/aferoassert" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
         </a>
-        <strong>Usage</strong>
-        <pre class="code prettyprint lang-shell prettyprinted"><code class="code-content">$ go get -u go.nhat.io/&lt;MODULE&gt;</code></pre>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Module</th>
-                    <th>Latest Release</th>
-                    <th>Source Repository</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/aferoassert" target="_blank">Afero Assert</a>
-                    </td>
-                    <td>
-                        aferoassert
-                    </td>
-                    <td class="center">v0.4.0</td>
-                    <td><a href="https://github.com/nhatthm/aferoassert" target="_blank">github.com/nhatthm/aferoassert</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/aferocopy/v2" target="_blank">Afero Copy</a>
-                    </td>
-                    <td>
-                        aferocopy/v2
-                    </td>
-                    <td class="center">v2.1.0</td>
-                    <td><a href="https://github.com/nhatthm/aferocopy" target="_blank">github.com/nhatthm/aferocopy</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/aferomock" target="_blank">Afero Mock</a>
-                    </td>
-                    <td>
-                        aferomock
-                    </td>
-                    <td class="center">v0.9.0</td>
-                    <td><a href="https://github.com/nhatthm/aferomock" target="_blank">github.com/nhatthm/aferomock</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/authenticator" target="_blank">Authenticator</a>
-                    </td>
-                    <td>
-                        authenticator
-                    </td>
-                    <td class="center">v0.8.0</td>
-                    <td><a href="https://github.com/nhatthm/go-authenticator" target="_blank">github.com/nhatthm/go-authenticator</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/clock" target="_blank">Clock</a>
-                    </td>
-                    <td>
-                        clock
-                    </td>
-                    <td class="center">v0.8.0</td>
-                    <td><a href="https://github.com/nhatthm/go-clock" target="_blank">github.com/nhatthm/go-clock</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/cookiejar" target="_blank">CookieJar</a>
-                    </td>
-                    <td>
-                        cookiejar
-                    </td>
-                    <td class="center">v0.4.0</td>
-                    <td><a href="https://github.com/nhatthm/go-cookiejar" target="_blank">github.com/nhatthm/go-cookiejar</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/consolesteps" target="_blank">Terminal Emulator steps for cucumber/godog</a>
-                    </td>
-                    <td>
-                        consolesteps
-                    </td>
-                    <td class="center">v0.2.0</td>
-                    <td><a href="https://github.com/nhatthm/consolesteps" target="_blank">github.com/nhatthm/consolesteps</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/exec" target="_blank">Exec</a>
-                    </td>
-                    <td>
-                        exec
-                    </td>
-                    <td class="center">v0.9.0</td>
-                    <td><a href="https://github.com/nhatthm/go-exec" target="_blank">github.com/nhatthm/go-exec</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/cpy/v3" target="_blank">Go bindings for the Python C-API</a>
-                    </td>
-                    <td>
-                        cpy/v3
-                    </td>
-                    <td class="center">v3.12.0</td>
-                    <td><a href="https://github.com/nhatthm/go-cpy" target="_blank">github.com/nhatthm/go-cpy</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/python/v3" target="_blank">Go high-level bindings for the Python C-API</a>
-                    </td>
-                    <td>
-                        python/v3
-                    </td>
-                    <td class="center">v3.12.0</td>
-                    <td><a href="https://github.com/nhatthm/go-python" target="_blank">github.com/nhatthm/go-python</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/fontforge" target="_blank">Go bindings for the Python fontforge module</a>
-                    </td>
-                    <td>
-                        fontforge
-                    </td>
-                    <td class="center">v0.5.0</td>
-                    <td><a href="https://github.com/nhatthm/go-fontforge" target="_blank">github.com/nhatthm/go-fontforge</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/psmat" target="_blank">Go bindings for the Python psMat module</a>
-                    </td>
-                    <td>
-                        psmat
-                    </td>
-                    <td class="center">v0.3.0</td>
-                    <td><a href="https://github.com/nhatthm/go-psMat" target="_blank">github.com/nhatthm/go-psMat</a></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/grpcmock" target="_blank">gRPC Mock</a>
-                    </td>
-                    <td>
-                        grpcmock
-                    </td>
-                    <td class="center">v0.35.0</td>
-                    <td><a href="https://github.com/nhatthm/grpcmock" target="_blank">github.com/nhatthm/grpcmock</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/httpmock" target="_blank">HTTP Mock</a>
-                    </td>
-                    <td>
-                        httpmock
-                    </td>
-                    <td class="center">v0.12.0</td>
-                    <td><a href="https://github.com/nhatthm/httpmock" target="_blank">github.com/nhatthm/httpmock</a></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/matcher/v3" target="_blank">Matcher</a>
-                    </td>
-                    <td>
-                        matcher/v3
-                    </td>
-                    <td class="center">v3.4.0</td>
-                    <td><a href="https://github.com/nhatthm/go-matcher" target="_blank">github.com/nhatthm/go-matcher</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/once" target="_blank">Once</a>
-                    </td>
-                    <td>
-                        once
-                    </td>
-                    <td class="center">v0.3.0</td>
-                    <td><a href="https://github.com/nhatthm/go-once" target="_blank">github.com/nhatthm/go-once</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/otelsql" target="_blank">OpenTelemetry Wrapper for SQL database driver</a>
-                    </td>
-                    <td>
-                        otelsql
-                    </td>
-                    <td class="center">v0.16.0</td>
-                    <td><a href="https://github.com/nhatthm/otelsql" target="_blank">github.com/nhatthm/otelsql</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/otp" target="_blank">One-time password</a>
-                    </td>
-                    <td>
-                        otp
-                    </td>
-                    <td class="center">v0.11.0</td>
-                    <td><a href="https://github.com/nhatthm/go-otp" target="_blank">github.com/nhatthm/go-otp</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/surveyexpect" target="_blank">Expects for AlecAivazis/survey</a>
-                    </td>
-                    <td>
-                        surveyexpect
-                    </td>
-                    <td class="center">v0.8.0</td>
-                    <td><a href="https://github.com/nhatthm/surveyexpect" target="_blank">github.com/nhatthm/surveyexpect</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/redact" target="_blank">Redact</a>
-                    </td>
-                    <td>
-                        redact
-                    </td>
-                    <td class="center">v0.1.0</td>
-                    <td><a href="https://github.com/nhatthm/go-redact" target="_blank">github.com/nhatthm/go-redact</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/requestid" target="_blank">RequestID</a>
-                    </td>
-                    <td>
-                        requestid
-                    </td>
-                    <td class="center">v0.2.0</td>
-                    <td><a href="https://github.com/nhatthm/go-requestid" target="_blank">github.com/nhatthm/go-requestid</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/secretstorage" target="_blank">Secret Storage</a>
-                    </td>
-                    <td>
-                        secretstorage
-                    </td>
-                    <td class="center">v0.7.0</td>
-                    <td><a href="https://github.com/nhatthm/go-secretstorage" target="_blank">github.com/nhatthm/go-secretstorage</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/surveysteps" target="_blank">Survey steps for cucumber/godog</a>
-                    </td>
-                    <td>
-                        surveysteps
-                    </td>
-                    <td class="center">v0.2.0</td>
-                    <td><a href="https://github.com/nhatthm/surveysteps" target="_blank">github.com/nhatthm/surveysteps</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/testcontainers-extra" target="_blank">Testcontainers Extra</a>
-                    </td>
-                    <td>
-                        testcontainers-extra
-                    </td>
-                    <td class="center">v0.17.0</td>
-                    <td><a href="https://github.com/nhatthm/testcontainers-go-extra" target="_blank">github.com/nhatthm/testcontainers-go-extra</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/testcontainers-registry" target="_blank">Testcontainers Registry</a>
-                    </td>
-                    <td>
-                        testcontainers-registry
-                    </td>
-                    <td class="center">v0.18.0</td>
-                    <td><a href="https://github.com/nhatthm/testcontainers-go-registry" target="_blank">github.com/nhatthm/testcontainers-go-registry</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/timeparser" target="_blank">Time Parser</a>
-                    </td>
-                    <td>
-                        timeparser
-                    </td>
-                    <td class="center">v0.3.0</td>
-                    <td><a href="https://github.com/nhatthm/timeparser" target="_blank">github.com/nhatthm/timeparser</a></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/vanityrender" target="_blank">Vanity HTML Renderer</a>
-                    </td>
-                    <td>
-                        vanityrender
-                    </td>
-                    <td class="center">v0.15.0</td>
-                    <td><a href="https://github.com/nhatthm/govanityrender" target="_blank">github.com/nhatthm/govanityrender</a></td>
-                </tr>
-                
-                
-                <tr>
-                    <td>
-                        <a href="https://pkg.go.dev/go.nhat.io/wait" target="_blank">Wait</a>
-                    </td>
-                    <td>
-                        wait
-                    </td>
-                    <td class="center">v0.2.0</td>
-                    <td><a href="https://github.com/nhatthm/go-wait" target="_blank">github.com/nhatthm/go-wait</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <p class="center footer">
-            Generated by <a href="https://github.com/nhatthm/govanityrender" target="_blank">vanityrender</a> v0.15.0
-        </p>
-    </section>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <script>
-        tippy('.deprecated', {
-            content(reference) {
-                return reference.getAttribute('data-tooltip');
-            }
-        });
-    </script>
+      </div>
+    </div>
+        <div class="row" data-search="Afero Copy aferocopy/v2">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/aferocopy/v2" target="_blank" rel="noopener noreferrer">Afero Copy</a>
+        </div>
+        <span class="row-path">go.nhat.io/aferocopy/v2</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/aferocopy/v2@v2.1.0">v2.1.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/aferocopy" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Afero Mock aferomock">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/aferomock" target="_blank" rel="noopener noreferrer">Afero Mock</a>
+        </div>
+        <span class="row-path">go.nhat.io/aferomock</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/aferomock@v0.9.0">v0.9.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/aferomock" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Authenticator authenticator">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/authenticator" target="_blank" rel="noopener noreferrer">Authenticator</a>
+        </div>
+        <span class="row-path">go.nhat.io/authenticator</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/authenticator@v0.8.0">v0.8.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-authenticator" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Clock clock">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/clock" target="_blank" rel="noopener noreferrer">Clock</a>
+        </div>
+        <span class="row-path">go.nhat.io/clock</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/clock@v0.8.0">v0.8.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-clock" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="CookieJar cookiejar">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/cookiejar" target="_blank" rel="noopener noreferrer">CookieJar</a>
+        </div>
+        <span class="row-path">go.nhat.io/cookiejar</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/cookiejar@v0.4.0">v0.4.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-cookiejar" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Terminal Emulator steps for cucumber/godog consolesteps">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/consolesteps" target="_blank" rel="noopener noreferrer">Terminal Emulator steps for cucumber/godog</a>
+        </div>
+        <span class="row-path">go.nhat.io/consolesteps</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/consolesteps@v0.2.0">v0.2.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/consolesteps" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Exec exec">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/exec" target="_blank" rel="noopener noreferrer">Exec</a>
+        </div>
+        <span class="row-path">go.nhat.io/exec</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/exec@v0.9.0">v0.9.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-exec" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Go bindings for the Python C-API cpy/v3">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/cpy/v3" target="_blank" rel="noopener noreferrer">Go bindings for the Python C-API</a>
+        </div>
+        <span class="row-path">go.nhat.io/cpy/v3</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/cpy/v3@v3.12.0">v3.12.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-cpy" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Go high-level bindings for the Python C-API python/v3">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/python/v3" target="_blank" rel="noopener noreferrer">Go high-level bindings for the Python C-API</a>
+        </div>
+        <span class="row-path">go.nhat.io/python/v3</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/python/v3@v3.12.0">v3.12.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-python" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Go bindings for the Python fontforge module fontforge">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/fontforge" target="_blank" rel="noopener noreferrer">Go bindings for the Python fontforge module</a>
+        </div>
+        <span class="row-path">go.nhat.io/fontforge</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/fontforge@v0.5.0">v0.5.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-fontforge" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Go bindings for the Python psMat module psmat">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/psmat" target="_blank" rel="noopener noreferrer">Go bindings for the Python psMat module</a>
+        </div>
+        <span class="row-path">go.nhat.io/psmat</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/psmat@v0.3.0">v0.3.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-psMat" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+            <div class="row" data-search="gRPC Mock grpcmock">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/grpcmock" target="_blank" rel="noopener noreferrer">gRPC Mock</a>
+        </div>
+        <span class="row-path">go.nhat.io/grpcmock</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/grpcmock@v0.35.0">v0.35.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/grpcmock" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="HTTP Mock httpmock">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/httpmock" target="_blank" rel="noopener noreferrer">HTTP Mock</a>
+        </div>
+        <span class="row-path">go.nhat.io/httpmock</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/httpmock@v0.12.0">v0.12.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/httpmock" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+            <div class="row" data-search="Matcher matcher/v3">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/matcher/v3" target="_blank" rel="noopener noreferrer">Matcher</a>
+        </div>
+        <span class="row-path">go.nhat.io/matcher/v3</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/matcher/v3@v3.4.0">v3.4.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-matcher" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Once once">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/once" target="_blank" rel="noopener noreferrer">Once</a>
+        </div>
+        <span class="row-path">go.nhat.io/once</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/once@v0.3.0">v0.3.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-once" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="OpenTelemetry Wrapper for SQL database driver otelsql">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/otelsql" target="_blank" rel="noopener noreferrer">OpenTelemetry Wrapper for SQL database driver</a>
+        </div>
+        <span class="row-path">go.nhat.io/otelsql</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/otelsql@v0.16.0">v0.16.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/otelsql" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="One-time password otp">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/otp" target="_blank" rel="noopener noreferrer">One-time password</a>
+        </div>
+        <span class="row-path">go.nhat.io/otp</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/otp@v0.11.0">v0.11.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-otp" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Expects for AlecAivazis/survey surveyexpect">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/surveyexpect" target="_blank" rel="noopener noreferrer">Expects for AlecAivazis/survey</a>
+        </div>
+        <span class="row-path">go.nhat.io/surveyexpect</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/surveyexpect@v0.8.0">v0.8.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/surveyexpect" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Redact redact">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/redact" target="_blank" rel="noopener noreferrer">Redact</a>
+        </div>
+        <span class="row-path">go.nhat.io/redact</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/redact@v0.1.0">v0.1.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-redact" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="RequestID requestid">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/requestid" target="_blank" rel="noopener noreferrer">RequestID</a>
+        </div>
+        <span class="row-path">go.nhat.io/requestid</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/requestid@v0.2.0">v0.2.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-requestid" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Secret Storage secretstorage">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/secretstorage" target="_blank" rel="noopener noreferrer">Secret Storage</a>
+        </div>
+        <span class="row-path">go.nhat.io/secretstorage</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/secretstorage@v0.7.0">v0.7.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-secretstorage" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Survey steps for cucumber/godog surveysteps">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/surveysteps" target="_blank" rel="noopener noreferrer">Survey steps for cucumber/godog</a>
+        </div>
+        <span class="row-path">go.nhat.io/surveysteps</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/surveysteps@v0.2.0">v0.2.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/surveysteps" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Testcontainers Extra testcontainers-extra">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/testcontainers-extra" target="_blank" rel="noopener noreferrer">Testcontainers Extra</a>
+        </div>
+        <span class="row-path">go.nhat.io/testcontainers-extra</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/testcontainers-extra@v0.17.0">v0.17.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/testcontainers-go-extra" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Testcontainers Registry testcontainers-registry">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/testcontainers-registry" target="_blank" rel="noopener noreferrer">Testcontainers Registry</a>
+        </div>
+        <span class="row-path">go.nhat.io/testcontainers-registry</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/testcontainers-registry@v0.18.0">v0.18.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/testcontainers-go-registry" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Time Parser timeparser">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/timeparser" target="_blank" rel="noopener noreferrer">Time Parser</a>
+        </div>
+        <span class="row-path">go.nhat.io/timeparser</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/timeparser@v0.3.0">v0.3.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/timeparser" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+        <div class="row" data-search="Vanity HTML Renderer vanityrender">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/vanityrender" target="_blank" rel="noopener noreferrer">Vanity HTML Renderer</a>
+        </div>
+        <span class="row-path">go.nhat.io/vanityrender</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/vanityrender@v0.15.0">v0.15.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/govanityrender" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+                <div class="row" data-search="Wait wait">
+      <div class="row-main">
+        <div class="row-title">
+          <a class="row-name" href="https://pkg.go.dev/go.nhat.io/wait" target="_blank" rel="noopener noreferrer">Wait</a>
+        </div>
+        <span class="row-path">go.nhat.io/wait</span>
+      </div>
+      <div class="row-end">
+        <button type="button" class="row-copy" title="Copy go get command" data-copy-text="go get -u go.nhat.io/wait@v0.2.0">v0.2.0</button>
+        <a class="row-repo" href="https://github.com/nhatthm/go-wait" target="_blank" rel="noopener noreferrer" title="Source repository">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8.5 7H17v8.5"></path></svg>
+        </a>
+      </div>
+    </div>
+    
+  </div>
+
+  <p id="list-empty" class="empty">No module matches that filter.</p>
+
+  <div class="contribute">
+    <span class="contribute-label">Contribute</span>
+    <p class="contribute-copy">Issues and pull requests are welcome on any of the repositories. The registry itself is generated from a single manifest.</p>
+    <div class="contribute-actions">
+      <a class="btn-solid" href="https://github.com/nhatthm/go.nhat.io" target="_blank" rel="noopener noreferrer">Registry source</a>
+      <a class="btn-outline" href="https://github.com/nhatthm" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn-outline accent coffee-inline" href="https://donate.nhat.me" target="_blank" rel="noopener noreferrer">Buy me a coffee</a>
+    </div>
+    <span class="render-footer">Generated by <a class="mark-link" href="https://github.com/nhatthm/govanityrender" target="_blank" rel="noopener noreferrer" style="color:var(--mute)">vanityrender</a> v0.15.0</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  function copy(text, btn, doneLabel) {
+    var original = btn.textContent;
+
+    function done() {
+      btn.textContent = doneLabel || 'Copied';
+      setTimeout(function () { btn.textContent = original; }, 1600);
+    }
+
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  document.body.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-copy-text]');
+    if (!btn) return;
+    copy(btn.getAttribute('data-copy-text').replace(/&lt;/g, '<').replace(/&gt;/g, '>'), btn, btn.id === 'usage-copy' ? 'Copied' : 'copied');
+  });
+
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#list .row'));
+  var countEl = document.getElementById('list-count');
+  var emptyEl = document.getElementById('list-empty');
+  var filterEl = document.getElementById('list-filter');
+
+  function applyFilter() {
+    var q = filterEl.value.trim().toLowerCase();
+    var visible = 0;
+
+    rows.forEach(function (row) {
+      var match = !q || row.getAttribute('data-search').toLowerCase().indexOf(q) !== -1;
+      row.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+
+    countEl.textContent = q ? (visible + ' of ' + rows.length + ' modules') : (rows.length + ' modules');
+    emptyEl.style.display = visible === 0 ? '' : 'none';
+  }
+
+  filterEl.addEventListener('input', applyFilter);
+  applyFilter();
+})();
+</script>
 </body>
 </html>
