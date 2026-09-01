@@ -1,5 +1,4 @@
 {
-  "checksum": "587e58026c2a7c09b5ad1d92bad565c4d9ada8af",
   "page_title": "Open Source Go Modules",
   "page_description": "",
   "hostname": "go.nhat.io",
@@ -857,5 +856,6 @@
         }
       ]
     }
-  ]
+  ],
+  "checksum": "587e58026c2a7c09b5ad1d92bad565c4d9ada8af"
 }
