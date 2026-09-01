@@ -26,8 +26,10 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Build
-        uses: nhatthm/govanityrender-action@v0.3.0
+        uses: nhatthm/govanityrender-action@v0.4.0
         with:
+          homepage-template: templates/homepage.html.hbs
+          404-template: templates/404.html.hbs
           modules: ${{ github.event.inputs.modules }}
 
       - name: Push
